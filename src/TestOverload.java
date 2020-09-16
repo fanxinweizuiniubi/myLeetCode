@@ -1,20 +1,9 @@
-public class TestOverload {
+import java.io.Serializable;
 
-    TestOverload(){
-        System.out.println("午餐");
-    }
-
-    TestOverload(int i){
-        System.out.println(i);
-    }
+public class TestOverload implements Serializable {
 
     public static void main(String[] args) {
-        TestOverload testOverload = new Son();
+
     }
-
-}
-class Son extends TestOverload{
-
-
 
 }
