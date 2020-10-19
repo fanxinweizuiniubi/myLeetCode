@@ -2,19 +2,27 @@ package multiThread;
 
 public class NoneBlock {
 
+    private static final Object obj = new Object();
+
     static class ThreadA implements Runnable {
+
         @Override
         public void run() {
-            for (int i = 0; i < 100; i++) {
-                System.out.println("Thread A " + i);
+            synchronized(obj) {
+                for (int i = 0; i < 100; i++) {
+                    System.out.println("Thread A " + i);
+                }
             }
         }
+
     }
     static class ThreadB implements Runnable {
         @Override
         public void run() {
-            for (int i = 0; i < 100; i++) {
-                System.out.println("Thread B " + i);
+            synchronized(obj) {
+                for (int i = 0; i < 100; i++) {
+                    System.out.println("Thread B " + i);
+                }
             }
         }
     }

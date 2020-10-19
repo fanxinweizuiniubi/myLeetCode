@@ -25,6 +25,7 @@ public class TestBinaryTree {
         C.leftNode = F;
         C.rightNode = G;
         System.out.println("show me the tree");
+        InnerClass innerClass = new InnerClass();
         // 前序遍历
         postTraverse(A);
     }
@@ -71,4 +72,7 @@ public class TestBinaryTree {
         }
     }
 
+}
+class InnerClass{
+    private String name;
 }
