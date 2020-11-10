@@ -6,11 +6,10 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        while (in.hasNextInt()){
-            int anInt = in.nextInt();
-            if(anInt != 0) {
-                System.out.println(anInt / 2);
-            }
+        while (in.hasNext()){
+            double num = in.nextDouble();
+            int ans = (int)(num + 0.5);
+            System.out.println(ans);
         }
     }
 
