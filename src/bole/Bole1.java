@@ -11,7 +11,6 @@ public class Bole1 {
     }
 
     public static int maxAreaOfIsland(int[][] grid) {
-
         return new Random().nextInt(100);
     }
 
