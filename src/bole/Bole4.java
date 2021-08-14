@@ -3,7 +3,7 @@ package bole;
 public class Bole4 {
 
     public static void main(String[] args) {
-        int[] arr = {1,2,3,-1};
+        int[] arr = {1,-2,3,10,-4,7,2,5};
         int sum = maximumSum(arr);
         System.out.println(sum);
     }

@@ -1,53 +1,59 @@
 package linkedList;
 
+import java.util.List;
+
 public class LeetCode02 {
     public static void main(String[] args) {
-        ListNode l10 = new ListNode(2);
-        ListNode l11 = new ListNode(4);
-        ListNode l12 = new ListNode(3);
-        l10.next = l11;
-        l11.next = l12;
-
-        ListNode l20 = new ListNode(5);
-        ListNode l21 = new ListNode(6);
-        ListNode l22 = new ListNode(4);
-        l20.next = l21;
-        l21.next = l22;
+        int[] a1 = {9, 8, 7};
+        int[] a2 = {2, 3};
+        ListNode l10 = create(a1);
+        ListNode l20 = create(a2);
 
         ListNode re = addTwoNumbers(l10, l20);
+        System.out.println(re);
     }
 
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        if (null == l1 && null == l2) return null;
-        if (null == l1) return l2;
-        if (null == l2) return l1;
-        ListNode cur = new ListNode(0);
-        ListNode head = cur;
-        int jinwei = 0;
-        int a = 0;
-        int b = 0;
-        while (null != l1 || null != l2) {
-            if (null != l1) a = l1.val;
-            else a = 0;
-            if (null != l2) b = l2.val;
-            else b = 0;
-            int sum = a + b + jinwei;
+    public static ListNode create(int[] arr) {
+        ListNode head = null;
+        for (int i : arr) {
+            ListNode p = new ListNode(i);
+            if (head == null) {
+                head = p;
+            } else {
+                p.next = head;
+                head = p;
+            }
+        }
+        return head;
+    }
 
-            jinwei = sum / 10;
+    // 987 + 23 = 1010
+    // 7->8->9
+    // 3->2
+    // 0->1->0->1
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode pre = new ListNode(0);
+        ListNode cur = pre;
+        int carry = 0;
+        while(l1 != null || l2 != null) {
+            int x = l1 == null ? 0 : l1.val;
+            int y = l2 == null ? 0 : l2.val;
+            int sum = x + y + carry;
+
+            carry = sum / 10;
             sum = sum % 10;
             cur.next = new ListNode(sum);
 
             cur = cur.next;
-            if (null != l1)
+            if(l1 != null)
                 l1 = l1.next;
-            if (null != l2)
+            if(l2 != null)
                 l2 = l2.next;
-
-            if (jinwei == 1) {
-                cur.next = new ListNode(jinwei);
-            }
         }
-        return head.next;
+        if(carry == 1) {
+            cur.next = new ListNode(carry);
+        }
+        return pre.next;
     }
 }
 

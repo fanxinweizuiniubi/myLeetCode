@@ -20,11 +20,23 @@ public class LeetCode206 {
         l2.next = l3;
         l3.next = l4;
         l4.next = l5;
-        ListNode re = reverseList2(l1);
+        ListNode re = reverse(l1);
         while(re != null){
             System.out.println(re.val);
             re = re.next;
         }
+    }
+
+    public static ListNode reverse(ListNode head) {
+        ListNode pre = null;
+        ListNode cur = head;
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        return pre;
     }
 
     // 三指针翻转
