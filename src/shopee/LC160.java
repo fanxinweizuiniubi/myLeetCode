@@ -24,7 +24,7 @@ public class LC160 {
         l5.next = l3;*/
         ListNode l1 = new ListNode(1);
         ListNode l2 = new ListNode(1);
-        ListNode intersectionNode = getIntersectionNode(l1, l2);
+        ListNode intersectionNode = getIntersectionNode01(l1, l2);
         System.out.println(intersectionNode);
     }
 
