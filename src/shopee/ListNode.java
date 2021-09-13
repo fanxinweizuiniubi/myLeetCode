@@ -8,9 +8,5 @@ public class ListNode {
         val = _val;
         next = null;
     }
-
-    public static void main(String[] args) {
-
-    }
-
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
