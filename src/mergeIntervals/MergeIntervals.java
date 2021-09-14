@@ -1,9 +1,6 @@
 package mergeIntervals;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class MergeIntervals {
 
@@ -11,6 +8,19 @@ public class MergeIntervals {
         MergeIntervals mergeIntervals = new MergeIntervals();
         int[][] intervals = {{1,4}, {0,2}, {3,5}};
         mergeIntervals.merge(intervals);
+    }
+
+    public int[][] mergeOfficial(int[][] intervals) {
+        Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));
+        LinkedList<int[]> merged = new LinkedList<>();
+        for (int[] interval : intervals) {
+            if (merged.isEmpty() || merged.getLast()[1] < interval[0]) {
+                merged.add(interval);
+            } else {
+                merged.getLast()[1] = Math.max(merged.getLast()[1], interval[1]);
+            }
+        }
+        return merged.toArray(new int[merged.size()][]);
     }
 
     public int[][] merge(int[][] intervals) {
