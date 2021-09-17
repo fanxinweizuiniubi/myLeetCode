@@ -1,5 +1,11 @@
 package slowFast;
 
+import org.omg.PortableInterceptor.INACTIVE;
+
+/**
+ * 题解
+ * https://leetcode-cn.com/problems/linked-list-cycle-ii/solution/linked-list-cycle-ii-kuai-man-zhi-zhen-shuang-zhi-/
+ */
 public class DetectCycle {
 
     public ListNode detectCycle(ListNode head) {
