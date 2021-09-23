@@ -3,11 +3,6 @@ package bfs;
 import java.util.*;
 
 public class ZigzagLevelOrder {
-    public static void main(String[] args) {
-        List<Integer> reverse = Arrays.asList(1,2,3);
-
-    }
-
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
         if (root == null) return res;
