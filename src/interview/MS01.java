@@ -25,12 +25,14 @@ public class MS01 {
                 return o2.compareTo(o1);
             }
         });
-        System.out.println(list.toArray().toString());
+        System.out.println(Arrays.toString(list.toArray()));
         // 线程池
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(3,5,60,
                 TimeUnit.SECONDS, new LinkedBlockingDeque<>(10));
         // 带有版本号的cas
-        AtomicStampedReference asr = new AtomicStampedReference(0,0);
+        AtomicStampedReference<Integer> asr = new AtomicStampedReference<>(0,0);
+        new ArrayList<>();
+        new HashMap<>();
     }
 
 }
