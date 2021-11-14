@@ -2,9 +2,9 @@ package shopee;
 
 public class ListNode {
 
-    int val;
-    ListNode next;
-    ListNode(int _val) {
+    public int val;
+    public ListNode next;
+    public ListNode(int _val) {
         val = _val;
         next = null;
     }
