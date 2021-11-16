@@ -10,6 +10,9 @@ public class MS03 {
         int[] b = {2, 4, 6};
         int[] merge = ms03.merge(a, b);
         System.out.println(Arrays.toString(merge));
+        String s = "10年期";
+        String substring = s.substring(0, s.length() - 1);
+        System.out.println("a");
     }
 
     public int[] merge(int[] a, int[] b) {
