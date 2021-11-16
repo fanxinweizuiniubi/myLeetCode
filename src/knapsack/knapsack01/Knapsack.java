@@ -1,4 +1,4 @@
-package knapsack;
+package knapsack.knapsack01;
 
 public class Knapsack {
 

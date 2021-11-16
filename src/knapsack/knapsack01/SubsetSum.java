@@ -1,4 +1,4 @@
-package knapsack;
+package knapsack.knapsack01;
 
 import java.util.Arrays;
 
