@@ -1,4 +1,6 @@
-package shopee;
+package company.shopee;
+
+import basic.ListNode;
 
 public class LC21 {
 

@@ -2,11 +2,15 @@ package basic;
 
 public class ListNode {
 
-    int val;
-
-    ListNode next;
+    public int val;
+    public ListNode next;
 
     public ListNode() {
+    }
+
+    public ListNode(int _val) {
+        val = _val;
+        next = null;
     }
 
     public ListNode(int val, ListNode next) {

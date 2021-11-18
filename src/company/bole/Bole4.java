@@ -1,4 +1,4 @@
-package bole;
+package company.bole;
 
 public class Bole4 {
 

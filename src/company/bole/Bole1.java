@@ -1,4 +1,4 @@
-package bole;
+package company.bole;
 
 import java.util.Random;
 

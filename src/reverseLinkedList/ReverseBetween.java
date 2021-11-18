@@ -1,6 +1,6 @@
 package reverseLinkedList;
 
-import shopee.ListNode;
+import basic.ListNode;
 
 /**
  * 192
