@@ -1,18 +1,31 @@
 package interview;
 
 import java.util.Arrays;
+import java.util.concurrent.*;
 
 public class MS03 {
 
     public static void main(String[] args) {
-        MS03 ms03 = new MS03();
-        int[] a = {1, 2, 5};
-        int[] b = {2, 4, 6};
-        int[] merge = ms03.merge(a, b);
-        System.out.println(Arrays.toString(merge));
-        String s = "10年期";
-        String substring = s.substring(0, s.length() - 1);
-        System.out.println("a");
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Future<?> future = null;
+        try {
+            future = executor.submit(() -> {
+                try {
+                    Thread.sleep(6000);
+                    System.out.println("线程执行");
+                } catch (InterruptedException e) {
+                    //e.printStackTrace();
+                }
+            });
+            future.get(5000, TimeUnit.MILLISECONDS);
+        } catch (TimeoutException e) {
+            future.cancel(true);
+            System.out.println("超时");
+        } catch (Exception e) {
+            System.out.println("异常:" + e.getMessage());
+        } finally {
+            executor.shutdown();
+        }
     }
 
     public int[] merge(int[] a, int[] b) {

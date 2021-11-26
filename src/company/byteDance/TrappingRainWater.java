@@ -2,6 +2,29 @@ package company.byteDance;
 
 public class TrappingRainWater {
 
+    public int optimize(int[] height) {
+        int re = 0, len = height.length, leftMax = 0, rightMax = 0;
+        int left = 1, right = len - 2;
+        for (int i = 1; i < len - 1; i++) {
+            if (height[left - 1] < height[right + 1]) {
+                leftMax = Math.max(leftMax, height[left - 1]);
+                int min = leftMax;
+                if (min > height[left]) {
+                    re += min - height[left];
+                }
+                left++;
+            } else {
+                rightMax = Math.max(rightMax, height[right + 1]);
+                int min = rightMax;
+                if (min > height[right]) {
+                    re += min = height[right];
+                }
+                right--;
+            }
+        }
+        return re;
+    }
+
     public int trap(int[] height) {
         int re = 0, len = height.length;
         int[] leftMax = new int[len];
