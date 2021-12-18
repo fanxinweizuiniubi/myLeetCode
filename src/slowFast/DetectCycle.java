@@ -1,6 +1,5 @@
 package slowFast;
 
-import org.omg.PortableInterceptor.INACTIVE;
 
 /**
  * 题解

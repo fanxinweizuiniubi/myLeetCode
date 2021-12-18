@@ -15,7 +15,7 @@ public class InsertInterval {
     public int[][] insert(int[][] intervals, int[] newInterval) {
         int p = 0, len = intervals.length;
         List<int[]> re = new ArrayList<>();
-            while (p < len && intervals[p][1] < newInterval[0]) {
+        while (p < len && intervals[p][1] < newInterval[0]) {
             re.add(intervals[p]);
             p++;
         }
