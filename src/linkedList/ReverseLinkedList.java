@@ -1,8 +1,6 @@
-package reverseLinkedList;
+package linkedList;
 
-import basic.ListNode;
-
-public class ReverseList {
+public class ReverseLinkedList {
 
     public ListNode reverseList(ListNode head) {
         ListNode pre = null, cur = head;
